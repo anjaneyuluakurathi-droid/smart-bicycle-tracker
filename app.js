@@ -106,7 +106,7 @@ function updateLoop() {
         fetch(`${backendUrl}/api/location/latest`)
             .then(res => res.json())
             .then(data => {
-                const lat = data.latitude || state.homeLat;
+               const lat = data.latitude || state.homeLat;
 const lng = data.longitude || state.homeLng;
 updateDashboard(lat, lng, data.accuracy || 5);
             })
