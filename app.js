@@ -106,8 +106,10 @@ function updateLoop() {
         fetch(`${backendUrl}/api/location/latest`)
             .then(res => res.json())
             .then(data => {
-               const lat = data.latitude || state.homeLat;
-const lng = data.longitude || state.homeLng;
+              const isVijayawada = (data.latitude === 16.506174);
+const lat = (data.latitude && !isVijayawada) ? data.latitude : state.homeLat;
+const lng = (data.longitude && !isVijayawada) ? data.longitude : state.homeLng;
+
 updateDashboard(lat, lng, data.accuracy || 5);
             })
             .catch(() => {
