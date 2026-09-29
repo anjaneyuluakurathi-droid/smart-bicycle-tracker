@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initMap() {
     map = L.map('map').setView([state.homeLat, state.homeLng], 13);
-   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-    subdomains: 'abcd',
-    maxZoom: 20
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012',
+    maxZoom: 18
 }).addTo(map);
 
     homeMarker = L.marker([state.homeLat, state.homeLng]).addTo(map).bindPopup("🏠 Home Location");
