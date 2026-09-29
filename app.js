@@ -5,8 +5,8 @@ let mode = 'LIVE';
 const backendUrl = 'https://smart-bicycle-tracker.onrender.com';
 
 let state = {
-    homeLat: 16.506174,
-    homeLng: 80.648015,
+    homeLat: 16.464181,
+    homeLng: 80.507284,
     radiusKm: 5.0,
     currentLat: 16.506174,
     currentLng: 80.648015
