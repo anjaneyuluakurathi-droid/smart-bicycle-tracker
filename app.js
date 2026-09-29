@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initMap() {
     map = L.map('map').setView([state.homeLat, state.homeLng], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 20
+}).addTo(map);
 
     homeMarker = L.marker([state.homeLat, state.homeLng]).addTo(map).bindPopup("🏠 Home Location");
     bicycleMarker = L.marker([state.currentLat, state.currentLng]).addTo(map).bindPopup("🚲 Bicycle");
